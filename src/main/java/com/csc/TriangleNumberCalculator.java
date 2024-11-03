@@ -1,4 +1,6 @@
 package com.csc;
+import java.util.List;
+import java.util.ArrayList;
 
 public class TriangleNumberCalculator {
   // Your code goes here!
@@ -35,6 +37,27 @@ public class TriangleNumberCalculator {
     return value(n) - value(m);
   }
 
+  public int multiply(int n, int m)
+  {
+    return value(n) * value(m);
+  }
+
+  public int divide(int n, int m)
+  {
+    return value(m) / value(n);
+  }
+
+  public List<Integer> sequence(int n)
+  {
+    List<Integer> triangleList = new ArrayList<>();
+
+    for(int i = 1; i <= n; i++) {
+      triangleList.add(value(i));
+    }
+
+    return triangleList;
+
+  }
 
   public static void main(String[] args)
   {
@@ -46,11 +69,17 @@ public class TriangleNumberCalculator {
 
      System.out.println(calculator.add(30000, 20000)); //print out 2
      System.out.println(calculator.add(2, 3)); //print out 9
-     System.out.println(calculator.add(4, 2)); //print out 13
+     System.out.println(calculator.add(4, 2)); //print out 13 
 
      System.out.println(calculator.subtract(30000, 10000)); //print out 0
      System.out.println(calculator.subtract(2, 3)); //print out -3
      System.out.println(calculator.subtract(4, 2)); //print out 7
+
+     System.out.println(calculator.multiply(4, 5));
+
+     List<Integer> triangleList = calculator.sequence(5);
+     System.out.println(triangleList);
+
   }
 
 }

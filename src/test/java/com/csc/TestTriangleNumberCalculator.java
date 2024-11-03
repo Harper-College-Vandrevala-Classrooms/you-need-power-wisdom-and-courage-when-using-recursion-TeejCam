@@ -2,6 +2,8 @@ package com.csc;
 
 import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.List;
+import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 
 public class TestTriangleNumberCalculator {
@@ -47,5 +49,28 @@ public class TestTriangleNumberCalculator {
   public void testSubtractTwoAndThree() {
     assertEquals(-3, calculator.subtract(2, 3));
   }
+
+  @Test 
+  public void testMultiplyTwoAndThree() {
+    assertEquals(18, calculator.multiply(2, 3));
+  }
+
+  @Test 
+  public void testDivideThreeAndFour() {
+    assertEquals(1, calculator.divide(3, 4));
+  }
+
+  @Test 
+  public void testDivideTwoAndThree() {
+    assertEquals(2, calculator.divide(2, 3));
+  }
+
+  @Test 
+  public void testSequenceFunction() {
+    List<Integer> triangleNums = calculator.sequence(2);
+    List<Integer> testTriangle = List.of(1, 3);
+    assertEquals(testTriangle, calculator.sequence(2));
+  }
+
 }
 
